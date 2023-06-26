@@ -5,8 +5,10 @@ export default function RootLayout() {
     <div className="root-layout">
         <header>
             <nav>
-                <NavLink to="/">Home</NavLink>
-                <NavLink to="help">Help</NavLink>
+              <NavLink to="/">Home</NavLink>
+              <NavLink to="searchby">Search By ...</NavLink>
+              <NavLink to="about">About</NavLink>
+              <NavLink to="help">Help</NavLink>
             </nav>
           </header>
           <main>
