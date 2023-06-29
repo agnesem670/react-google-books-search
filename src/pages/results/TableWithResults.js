@@ -1,8 +1,14 @@
+import { useSearchParams } from "react-router-dom"
 import { SEARCH } from "../Home"
+import { useEffect, useState } from "react"
 
 export default function TableWithResults() {
-  const search = SEARCH
-  console.log(search)
+  const [search, setSearch]= useState(SEARCH)
+  const [searchParams, setSearchParams]= useSearchParams()
+  
+  useEffect(() => {
+    setSearchParams({filter:search})
+  }, [search])
 
   return (
     <>
@@ -11,6 +17,3 @@ export default function TableWithResults() {
     </>
   )
 }
-
-
-
