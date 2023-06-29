@@ -1,13 +1,15 @@
-import { Form, redirect } from "react-router-dom";
+import { useState } from "react"
+import { Form, redirect  } from "react-router-dom"
+
 
 export default function Home() {
+  const [search, setSearch] = useState('')
   
   return (
     <div className='main-search'>
-      <h3>What book you are looking for?</h3>
       <Form method="post" action="/">
         <label>
-          <input type="text" name="search" required></input>
+          <input type="text" value={search} name="search" onChange={e => setSearch(e.target.value)} required></input>
         </label>
         <button>Search</button>
       </Form>
@@ -15,13 +17,18 @@ export default function Home() {
   )
 }
 
+export let SEARCH = ''
+
 export const homeAction = async ({ request }) => {
   console.log(request)
   const data = await request.formData()
-  const  inputedsearch = {
-    search: data.get('search')
-  }
-  console.log(inputedsearch)
-  
-  return redirect ('results')
+  SEARCH = data.get('search')
+  console.log(SEARCH)
+
+  return redirect("results")
+
 }
+
+
+
+

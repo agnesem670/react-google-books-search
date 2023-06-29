@@ -5,6 +5,7 @@ export default function HelpLayout() {
     <div className='results-layout'>
         <nav>
             <NavLink>Results</NavLink>
+            <NavLink>ResultsDetails</NavLink>
         </nav>
         
         <Outlet/>
