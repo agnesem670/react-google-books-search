@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom'
 
 //pages
-import Home, { homeAction }  from './pages/Home'
+import Home, { homeAction } from './pages/Home'
 import About from './pages/About'
 import SearchByTitle from './pages/searchby/SearchByTitle'
 import SearchByAuthor from './pages/searchby/SearchByAuthor'
@@ -24,17 +24,17 @@ import SearchByLayout from './layouts/SearchByLayout'
 import ResultsLayout from './layouts/ResultsLayout'
 
 const router = createBrowserRouter(
-    
+
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
-      <Route path="/" element={<Home/>} action={homeAction}/>
+      <Route path="/" element={<Home />} action={homeAction} />
       <Route path="results" element={<ResultsLayout />}>
-        <Route index element={<TableWithResults />} />
-        <Route path=":id" element={<ResultDetails/>} />
+        <Route index element={<TableWithResults />}/>
+        <Route path=":id" element={<ResultDetails />} />
       </Route>
 
       <Route path="about" element={<About />} />
-      
+
 
       <Route path="searchby" element={<SearchByLayout />}>
         <Route path="bytitle" element={<SearchByTitle />} />
@@ -53,9 +53,13 @@ const router = createBrowserRouter(
   )
 )
 function App() {
-  
+
   return (
-    <RouterProvider router={router} />
+    <div className='App'>
+      <div className='content'>
+        <RouterProvider router={router} />
+      </div>
+    </div>
   );
 }
 
