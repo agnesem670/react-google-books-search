@@ -15,7 +15,7 @@ import APIKeyHelp from './pages/help/ApiKeyHelp'
 import Contact, { contactAction } from './pages/help/Contact'
 import NotFound from './pages/NotFound'
 import TableWithResults from './pages/results/TableWithResults'
-import ResultDetails from './pages/results/ResultDetails'
+import ResultDetails, { resultDetailsLoader } from './pages/results/ResultDetails'
 
 //layouts
 import RootLayout from './layouts/RootLayout'
@@ -30,7 +30,7 @@ const router = createBrowserRouter(
       <Route path="/" element={<Home />} action={homeAction} />
       <Route path="results" element={<ResultsLayout />}>
         <Route index element={<TableWithResults />}/>
-        <Route path=":id" element={<ResultDetails />} />
+        <Route path=":id" element={<ResultDetails />} loader={resultDetailsLoader}/>
       </Route>
 
       <Route path="about" element={<About />} />

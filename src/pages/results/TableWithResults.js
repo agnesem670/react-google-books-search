@@ -1,4 +1,4 @@
-import { useSearchParams } from "react-router-dom"
+import { Link, useSearchParams } from "react-router-dom"
 import { useEffect, useState, useMemo } from "react"
 import { useRowSelect, useTable } from "react-table"
 import axios from "axios"
@@ -9,8 +9,6 @@ import { APIKey } from "../../data/APIKey"
 import { Checkbox } from '../../components/Checkbox'
 
 import './table.css'
-
-
 
 export default function TableWithResults() {
   const [search, setSearch] = useState(SEARCH)
@@ -47,7 +45,6 @@ export default function TableWithResults() {
   /* ----------------------------------- */
 
   const handleDetails = (event) => {
-    setDisplay('details')
     setId(event.currentTarget.id)
   }
 
@@ -84,7 +81,9 @@ export default function TableWithResults() {
             Header: 'Details',
             Footer: 'Details',
             Cell: ({ row }) => (
-              <button type='button' id={row.values.id} value={row.id} onClick={handleDetails}>More details</button>
+              <Link to={row.values.id} key={row.id} >
+                <button type='button' >More details</button>
+              </Link>
             )
           },
 
