@@ -5,6 +5,7 @@ export default function ResultDetails() {
   const { id } = useParams ()
   const books = useLoaderData()
   
+  
   return (
     <div>
       <p>Hello</p>
@@ -17,6 +18,7 @@ export const resultDetailsLoader = async ({params}) => {
   const { id } = params
 
   const res = await fetch('http://localhost:3000/results/' + id)
+  console.log(res)
 
   return res
 }

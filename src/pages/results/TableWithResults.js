@@ -8,8 +8,6 @@ import { COLUMNS } from "../../data/columns"
 import { APIKey } from "../../data/APIKey"
 import { Checkbox } from '../../components/Checkbox'
 
-import './table.css'
-
 export default function TableWithResults() {
   const [search, setSearch] = useState(SEARCH)
   const [inputValue, setInputValue] = useState('')
