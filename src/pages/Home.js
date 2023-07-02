@@ -24,8 +24,10 @@ export default function Home() {
     <body>
       <div class='main-container'>
         <MainLayout />
-        <div className='main-search'>
-          <p>What book are you looking for?</p>
+        <div className='main-search courier'>
+          {/* <p>If you're looking for books on a specific topic 
+            or by a specific author, you are on the right page. It is a place, where you can say ...</p> */}
+          <h3>What book you are looking for?</h3>
           <Form method="post" action="/">
             <label>
               <input
@@ -35,9 +37,8 @@ export default function Home() {
                 onChange={e => setSearch(e.target.value)}
                 required>
               </input>
-              <span>I am looking for...</span>
+              <span>The book</span>
             </label>
-            <br></br>
             <button>Search</button>
           </Form>
         </div >
