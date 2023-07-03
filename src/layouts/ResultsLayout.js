@@ -3,11 +3,10 @@ import { NavLink, Outlet } from 'react-router-dom'
 export default function HelpLayout() {
   return (
     <div className='results-layout'>
-        <nav>
+        {/* <nav>
             <NavLink>Results</NavLink>
             <NavLink>ResultsDetails</NavLink>
-        </nav>
-        
+        </nav> */}
         <Outlet/>
     </div>
   )

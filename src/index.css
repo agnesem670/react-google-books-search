@@ -1,4 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Permanent+Marker&family=Sedgwick+Ave&display=swap');
+
+:root {
+  --blue: rgb(14, 49, 63);
+  --green: #04AA6D;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -13,8 +19,8 @@ body {
 button {
   padding: 8px;
   border-radius: 4px;
-  border: 1px solid #04AA6D;
-  color: #04AA6D;
+  border: 1px solid var(--green);
+  color: var(--green);
   background: none;
   cursor: pointer;
   transition: 0.5s;
@@ -22,7 +28,7 @@ button {
 
 button:hover {
   color: white;
-  background-color: rgb(14, 49, 63);
+  background-color: var(--blue);
 }
 
 .courier {
@@ -38,8 +44,7 @@ header nav {
   width: 100vw; 
   top: 2vh;
   align-items: center;
-  background:rgb(14, 49, 63);
-  /* background-image: linear-gradient(45deg, c);  */
+  background:var(--blue);
   z-index: 1;
 }
 
@@ -50,38 +55,77 @@ main nav {
   height: 60px;
   width: 100vw; 
   top: calc(2vh + 60px);
-  align-items: center;
-  background:rgb(14, 49, 63);
-  /* background-image: linear-gradient(45deg, c);  */
   z-index: 1;
+  text-align: right;
 }
 
-
-header nav h3,
-main nav h3 {
+header nav h3 {
   margin-right: auto;
   color: white;
   margin-left: 10%;
   font-size: 1.5rem;
 }
 
-header nav a,
-main nav a{
+header nav a {
   display: block;
   color: white;
   font-size: 1.2rem;
   margin: 0 25px;
 }
 
-header nav a:nth-child(5),
-main nav a:nth-child(5)
-{
+main nav a {
+  display: block;
+  color: var(--blue);
+  font-size: 1.2rem;
+}
+
+main nav a:first-child {
+  margin-left: 80vw;
+}
+
+main nav a:last-child {
+  margin-right: 10vw;
+}
+
+header nav a:nth-child(5) {
   margin-right: 10%;
 }
 
-header nav a.active{
-  color:#04AA6D;
-  /* color:cadetblue; */
+header nav a.active,
+main nav a.active{
+  color:var(--green);
+}
+
+/* BREADCRUMBS*/
+.breadcrumbs {
+  margin-top: calc(2vh + 60px);
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.breadcrumbs > * {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.crumb:first-child {
+  margin-left: 10vw;
+}
+
+.crumb a {
+  color: var(--blue);
+  text-transform: uppercase;
+  font-weight: bold;
+  z-index: 1;
+  font-size: 1.25em;
+}
+
+.breadcrumbs .crumb:after {
+  content: '➼';
+  margin-left: 10px;
+}
+
+.breadcrumbs .crumb:last-child:after{
+  display: none;
 }
 
 /* CONTENT */
@@ -91,6 +135,7 @@ body {
 
 .main-container {
   position: relative;
+  animation: transitionImg 1s; 
 }
 
 .book-container {
@@ -139,7 +184,7 @@ body {
 .main-search > form > label > input {
   width: 15vw;
   padding: 10px;
-  border: 1px solid #04AA6D;
+  border: 1px solid var(--green);
   border-radius: 5px;
   outline: none;
   color: black;
@@ -154,7 +199,7 @@ body {
   padding: 10px;
   pointer-events: none;
   font-size: 1em;
-  color: #04AA6D;
+  color: var(--green);
   text-transform: uppercase;
 }
 
@@ -166,7 +211,10 @@ body {
   font-size: 0.65em;
   padding: 0 10px;
   background: #eee8e1;
+}
 
+.close {
+  display: none;
 }
 
 .story {
@@ -181,10 +229,6 @@ body {
     opacity: 1;
   }
 }
-
-
-
-
 
 /* TABLE */
 table {
@@ -206,26 +250,10 @@ table th, tfoot td {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: center;
-  background-color: #04AA6D;
+  background-color: var(--green);
   color: white;
 }
 
 
-.breadcrumbs > * {
-  display: inline-block;
-  margin-right: 10px;
-}
 
-.breadcrumbs .crumb:after {
-  content: '>';
-  margin-left: 10px;
-}
-
-.breadcrumbs .crumb:last-child:after{
-  display: none;
-}
-
-.close {
-  display: none;
-}
 

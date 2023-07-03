@@ -2,8 +2,6 @@ import { useState, useEffect } from "react"
 import { Form, redirect } from "react-router-dom"
 import MainLayout from "../layouts/MainLayout"
 
-
-
 export default function Home() {
   const [search, setSearch] = useState('')
   const [counter, setCounter] = useState(0)
@@ -25,8 +23,6 @@ export default function Home() {
       <div class='main-container'>
         <MainLayout />
         <div className='main-search '>
-          {/* <p>If you're looking for books on a specific topic 
-            or by a specific author, you are on the right page. It is a place, where you can say ...</p> */}
           <h3>What book you are looking for?</h3>
           <Form method="post" action="/">
             <label>
@@ -50,10 +46,8 @@ export default function Home() {
 export let SEARCH = ''
 
 export const homeAction = async ({ request }) => {
-  console.log(request)
   const data = await request.formData()
   SEARCH = data.get('search')
-  console.log(SEARCH)
 
   return redirect("results")
 }
