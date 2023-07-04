@@ -4,9 +4,9 @@ export default function SearchByLayout() {
   return (
     <div className='search-by-layout'>
         <nav>
-            <NavLink to="bytitle">Search By Title</NavLink>
-            <NavLink to="byauthor">Search By Author</NavLink>
-            <NavLink to="bycategory">Search By Category</NavLink>
+            <NavLink to="bytitle">By Title</NavLink>
+            <NavLink to="byauthor">By Author</NavLink>
+            <NavLink to="bycategory">By Category</NavLink>
         </nav>
 
         <Outlet />

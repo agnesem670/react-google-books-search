@@ -48,6 +48,10 @@ header nav {
   z-index: 1;
 }
 
+/* .search-by-layout {
+  text-align: right;
+} */
+
 main nav {
   position: absolute;
   display: flex;
@@ -56,6 +60,9 @@ main nav {
   width: 100vw; 
   top: calc(2vh + 60px);
   z-index: 1;
+}
+
+main > div {
   text-align: right;
 }
 
@@ -77,17 +84,18 @@ main nav a {
   display: block;
   color: var(--blue);
   font-size: 1.2rem;
+  /* margin: 0 25px; */
 }
 
 main nav a:first-child {
-  margin-left: 80vw;
+  margin-left: 70%;
 }
 
 main nav a:last-child {
   margin-right: 10vw;
 }
 
-header nav a:nth-child(5) {
+header nav a:last-child {
   margin-right: 10%;
 }
 
@@ -99,7 +107,7 @@ main nav a.active{
 /* BREADCRUMBS*/
 .breadcrumbs {
   margin-top: calc(2vh + 60px);
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.6);
 }
 
 .breadcrumbs > * {
