@@ -3,6 +3,7 @@
 :root {
   --blue: rgb(14, 49, 63);
   --green: #04AA6D;
+
 }
 
 * {
@@ -145,10 +146,8 @@ body {
   background-image: url('./assets/wood-background.gif');
 }
 
-/* .main-container,
-.search-by-container {
-  position: relative;
-  animation: transitionImg 1s; 
+/* .main-container {
+  z-index: 20;
 } */
 
 .book-container {
@@ -179,6 +178,7 @@ body {
   flex-direction: column;
   gap: 30px;
   animation: transitionImg 1s;
+  z-index: 1;
 }
 
 .main-search > form,

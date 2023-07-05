@@ -8,9 +8,6 @@ import {
 //pages
 import Home, { homeAction } from './pages/Home'
 import About from './pages/About'
-/* import SearchByTitle from './pages/searchby/SearchByTitle'
-import SearchByAuthor from './pages/searchby/SearchByAuthor'
-import SearchByCategory from './pages/searchby/SearchByCategory' */
 import APIKeyHelp from './pages/help/ApiKeyHelp'
 import Contact, { contactAction } from './pages/help/Contact'
 import NotFound from './pages/NotFound'
@@ -22,6 +19,7 @@ import RootLayout from './layouts/RootLayout'
 import HelpLayout from './layouts/HelpLayout'
 import SearchBy from './pages/SearchBy'
 import ResultsLayout from './layouts/ResultsLayout'
+import MainLayout from './layouts/MainLayout'
 
 const router = createBrowserRouter(
 
@@ -58,6 +56,7 @@ function App() {
     <div className='App'>
       <div className='content'>
         <RouterProvider router={router} />
+        <MainLayout/>
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { Form, redirect } from "react-router-dom"
-import MainLayout from "../layouts/MainLayout"
+import MainLayout, {Story} from "../layouts/MainLayout"
 
 export default function Home() {
   const [search, setSearch] = useState('')
@@ -19,9 +19,9 @@ export default function Home() {
   }, [counter])
 
   return (
-    <body>
+    <div>
       <div class='main-container'>
-        <MainLayout />
+        <Story />
         <div className='main-search '>
           <h3>What book you are looking for?</h3>
           <Form method="post" action="/">
@@ -39,7 +39,7 @@ export default function Home() {
           </Form>
         </div >
       </div>
-    </body>
+    </div>
   )
 }
 

@@ -1,11 +1,9 @@
 import { NavLink, Outlet } from "react-router-dom"
 import { Form, redirect } from "react-router-dom"
-import MainLayout from "../layouts/MainLayout"
 
 export default function SearchBy() {
   return (
     <div className='search-by-container'>
-      <MainLayout />
       <div className="adv-search">
         <Form method="post" action="searchby">
           <label>

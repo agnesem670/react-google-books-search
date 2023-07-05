@@ -8,8 +8,7 @@ export default function HelpLayout() {
             <NavLink to="apikeyhelp">API Key Help</NavLink>
             <NavLink to="contact">Contact</NavLink>
         </nav>
-        <MainLayout />
-        
+       
         <Outlet/>
     </div>
   )
