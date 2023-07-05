@@ -11,6 +11,10 @@
   text-decoration: none;
 }
 
+html {
+  position: relative;
+}
+
 body {
   font-family: 'DM Serif Display', serif;
   background-color: url('./assets/wood-background.gif');
@@ -141,10 +145,11 @@ body {
   background-image: url('./assets/wood-background.gif');
 }
 
-.main-container {
+/* .main-container,
+.search-by-container {
   position: relative;
   animation: transitionImg 1s; 
-}
+} */
 
 .book-container {
   position: relativ;
@@ -156,40 +161,47 @@ body {
   left: 0;
   right: 0;
   margin: 0 auto;
-  top: 10vh;
+  top: 15vh;
   max-width: 70vw;
 }
 
-.main-search {
+.main-search,
+.adv-search,
+.about-container {
   position: absolute;
   max-width: 15vw;
   max-height: 70vh;
-  top: 22vh;
+  top: 28vh;
   left: 60%;
   right:25%;
   display: flex;
   align-items: left;
   flex-direction: column;
   gap: 30px;
+  animation: transitionImg 1s;
 }
 
-.main-search > form {
+.main-search > form,
+.adv-search > form {
   display: flex;
   flex-direction: column;
 }
 
-.main-search > form > button {
+.main-search > form > button,
+.adv-search > form > button {
   width: 150px;
   height: 40px;
   margin-top: 1vh;
   font-size: large;
 }
 
-.main-search > form > label {
+.main-search > form > label,
+.adv-search > form > label {
   position: relative;
 }
 
-.main-search > form > label > input {
+.main-search > form > label > input,
+.adv-search > form > label > input {
   width: 15vw;
   padding: 10px;
   border: 1px solid var(--green);
@@ -201,7 +213,8 @@ body {
   transition: 0.5s;
 }
 
-.main-search > form > label > span {
+.main-search > form > label > span,
+.adv-search > form > label > span {
   position: absolute;
   left: 0;
   padding: 10px;
@@ -212,7 +225,9 @@ body {
 }
 
 .main-search > form > label > input:valid ~ span,
-.main-search > form > label > input:focus ~ span
+.main-search > form > label > input:focus ~ span,
+.adv-search > form > label > input:valid ~ span,
+.adv-search > form > label > input:focus ~ span
 {
   transform: translateX(10px) translateY(-7px);
   transition: 0.5s;
@@ -251,6 +266,7 @@ table td, table th {
 }
 
 table tr:nth-child(even){background-color: #f2f2f2;}
+table tr:nth-child(odd){background-color: rgba(255, 255, 255, 0.5);}
 
 table tr:hover {background-color: #ddd;}
 

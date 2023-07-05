@@ -8,9 +8,9 @@ import {
 //pages
 import Home, { homeAction } from './pages/Home'
 import About from './pages/About'
-import SearchByTitle from './pages/searchby/SearchByTitle'
+/* import SearchByTitle from './pages/searchby/SearchByTitle'
 import SearchByAuthor from './pages/searchby/SearchByAuthor'
-import SearchByCategory from './pages/searchby/SearchByCategory'
+import SearchByCategory from './pages/searchby/SearchByCategory' */
 import APIKeyHelp from './pages/help/ApiKeyHelp'
 import Contact, { contactAction } from './pages/help/Contact'
 import NotFound from './pages/NotFound'
@@ -20,7 +20,7 @@ import ResultDetails, { resultDetailsLoader } from './pages/results/ResultDetail
 //layouts
 import RootLayout from './layouts/RootLayout'
 import HelpLayout from './layouts/HelpLayout'
-import SearchByLayout from './layouts/SearchByLayout'
+import SearchBy from './pages/SearchBy'
 import ResultsLayout from './layouts/ResultsLayout'
 
 const router = createBrowserRouter(
@@ -36,10 +36,10 @@ const router = createBrowserRouter(
       <Route path="about" element={<About />} />
 
 
-      <Route path="searchby" element={<SearchByLayout />}>
-        <Route path="bytitle" element={<SearchByTitle />} />
+      <Route path="searchby" element={<SearchBy />}>
+        {/* <Route path="bytitle" element={<SearchByTitle />} />
         <Route path="byauthor" element={<SearchByAuthor />} />
-        <Route path="bycategory" element={<SearchByCategory />} />
+        <Route path="bycategory" element={<SearchByCategory />} /> */}
       </Route>
 
       <Route path="help" element={<HelpLayout />}>

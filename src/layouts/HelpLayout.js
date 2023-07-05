@@ -1,4 +1,5 @@
 import { NavLink, Outlet } from 'react-router-dom'
+import MainLayout from './MainLayout'
 
 export default function HelpLayout() {
   return (
@@ -7,6 +8,7 @@ export default function HelpLayout() {
             <NavLink to="apikeyhelp">API Key Help</NavLink>
             <NavLink to="contact">Contact</NavLink>
         </nav>
+        <MainLayout />
         
         <Outlet/>
     </div>
