@@ -8,18 +8,14 @@ import {
 //pages
 import Home, { homeAction } from './pages/Home'
 import About from './pages/About'
-import APIKeyHelp from './pages/help/ApiKeyHelp'
-import Contact, { contactAction } from './pages/help/Contact'
+import Contact, { contactAction } from './pages/Contact'
 import NotFound from './pages/NotFound'
 import TableWithResults from './pages/results/TableWithResults'
 import ResultDetails, { resultDetailsLoader } from './pages/results/ResultDetails'
 
 //layouts
 import RootLayout from './layouts/RootLayout'
-import HelpLayout from './layouts/HelpLayout'
-import SearchBy from './pages/SearchBy'
 import ResultsLayout from './layouts/ResultsLayout'
-import MainLayout from './layouts/MainLayout'
 
 const router = createBrowserRouter(
 
@@ -32,19 +28,7 @@ const router = createBrowserRouter(
       </Route>
 
       <Route path="about" element={<About />} />
-
-
-      <Route path="searchby" element={<SearchBy />}>
-        {/* <Route path="bytitle" element={<SearchByTitle />} />
-        <Route path="byauthor" element={<SearchByAuthor />} />
-        <Route path="bycategory" element={<SearchByCategory />} /> */}
-      </Route>
-
-      <Route path="help" element={<HelpLayout />}>
-        <Route path="apikeyhelp" element={<APIKeyHelp />} />
-        <Route path="contact" element={<Contact />} action={contactAction} />
-      </Route>
-
+      <Route path="contact" element={<Contact />} action={contactAction} />
       <Route path="*" element={<NotFound />} />
 
     </Route>
@@ -56,7 +40,6 @@ function App() {
     <div className='App'>
       <div className='content'>
         <RouterProvider router={router} />
-        <MainLayout/>
       </div>
     </div>
   );

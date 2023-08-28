@@ -1,4 +1,5 @@
 import { useLoaderData, useParams } from "react-router-dom"
+import Breadcrumb from '../../components/Breadcrumb'
 
 export default function ResultDetails() {
 
@@ -8,6 +9,7 @@ export default function ResultDetails() {
   
   return (
     <div>
+      < Breadcrumb/>
       <p>Hello</p>
 
     </div>

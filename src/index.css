@@ -53,10 +53,6 @@ header nav {
   z-index: 1;
 }
 
-/* .search-by-layout {
-  text-align: right;
-} */
-
 main nav {
   position: absolute;
   display: flex;
@@ -146,10 +142,6 @@ body {
   background-image: url('./assets/wood-background.gif');
 }
 
-/* .main-container {
-  z-index: 20;
-} */
-
 .book-container {
   position: relativ;
   text-align: center;
@@ -165,8 +157,9 @@ body {
 }
 
 .main-search,
-.adv-search,
-.about-container {
+.about-container,
+.key-container,
+.miss-key {
   position: absolute;
   max-width: 15vw;
   max-height: 70vh;
@@ -182,13 +175,13 @@ body {
 }
 
 .main-search > form,
-.adv-search > form {
+.miss-key > form {
   display: flex;
   flex-direction: column;
 }
 
 .main-search > form > button,
-.adv-search > form > button {
+.miss-key > form > button {
   width: 150px;
   height: 40px;
   margin-top: 1vh;
@@ -196,12 +189,12 @@ body {
 }
 
 .main-search > form > label,
-.adv-search > form > label {
+.miss-key > form > label {
   position: relative;
 }
 
 .main-search > form > label > input,
-.adv-search > form > label > input {
+.miss-key > form > label > input {
   width: 15vw;
   padding: 10px;
   border: 1px solid var(--green);
@@ -214,7 +207,7 @@ body {
 }
 
 .main-search > form > label > span,
-.adv-search > form > label > span {
+.miss-key > form > label > span {
   position: absolute;
   left: 0;
   padding: 10px;
@@ -226,8 +219,8 @@ body {
 
 .main-search > form > label > input:valid ~ span,
 .main-search > form > label > input:focus ~ span,
-.adv-search > form > label > input:valid ~ span,
-.adv-search > form > label > input:focus ~ span
+.miss-key > form > label > input:valid ~ span,
+.miss-key > form > label > input:focus ~ span
 {
   transform: translateX(10px) translateY(-7px);
   transition: 0.5s;

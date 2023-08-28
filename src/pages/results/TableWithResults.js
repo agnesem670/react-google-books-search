@@ -3,10 +3,13 @@ import { useEffect, useState, useMemo } from "react"
 import { useRowSelect, useTable } from "react-table"
 import axios from "axios"
 
-import { SEARCH } from "../Home"
+import { SEARCH } from "../../pages/Home"
+import { MISSKEY } from "../../pages/Home"
 import { COLUMNS } from "../../data/columns"
-import { APIKey } from "../../data/APIKey"
 import { Checkbox } from '../../components/Checkbox'
+import { APIKEY } from "../../data/APIKey"
+
+
 
 export default function TableWithResults() {
   const [search, setSearch] = useState(SEARCH)
@@ -30,7 +33,7 @@ export default function TableWithResults() {
 
   useEffect(() => {
     axios
-      .get(`https://www.googleapis.com/books/v1/volumes?q=${search}&key=${APIKey}`)
+      .get(`https://www.googleapis.com/books/v1/volumes?q=${search}&key=${APIKEY[1]}${MISSKEY[2]}${APIKEY[2]}${MISSKEY[3]}${APIKEY[3]}`)
       .then(response => {
         setPost(response.data.items)
         console.log(posts)

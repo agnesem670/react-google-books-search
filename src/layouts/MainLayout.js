@@ -10,22 +10,16 @@ import Story3 from '../assets/story-3.gif'
 export default function MainLayout() {
   
   return (
-    <div class='book-container'>
+    <div className='book-container'>
       <img src={OpenBook} className='book' alt='book'></img>
+      <img id='story0' src={Story0} className='close' alt='story'></img>
+      <img id='story1' src={Story1} className='close' alt='story'></img>
+      <img id='story2' src={Story2} className='close' alt='story'></img>
+      <img id='story3' src={Story3} className='close' alt='story'></img>
     </div>
   )
 }
 
-export function Story() {
-  
-  return (
-    <div class='story-container'>
-      <img id='story0' src={Story0} class='close' alt='story'></img>
-      <img id='story1' src={Story1} class='close' alt='story'></img>
-      <img id='story2' src={Story2} class='close' alt='story'></img>
-      <img id='story3' src={Story3} class='close' alt='story'></img>
-    </div>
-  )
-}
+
 
 
