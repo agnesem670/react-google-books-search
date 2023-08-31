@@ -3,13 +3,11 @@ import { useEffect, useState, useMemo } from "react"
 import { useRowSelect, useTable } from "react-table"
 import axios from "axios"
 
+import Breadcrumb from '../../components/Breadcrumb'
 import { SEARCH } from "../../pages/Home"
-import { MISSKEY } from "../../pages/Home"
+import { MISSAPIKEY } from "../../pages/Home"
 import { COLUMNS } from "../../data/columns"
-import { Checkbox } from '../../components/Checkbox'
 import { APIKEY } from "../../data/APIKey"
-
-
 
 export default function TableWithResults() {
   const [search, setSearch] = useState(SEARCH)
@@ -33,7 +31,7 @@ export default function TableWithResults() {
 
   useEffect(() => {
     axios
-      .get(`https://www.googleapis.com/books/v1/volumes?q=${search}&key=${APIKEY[1]}${MISSKEY[2]}${APIKEY[2]}${MISSKEY[3]}${APIKEY[3]}`)
+      .get(`https://www.googleapis.com/books/v1/volumes?q=${search}&key=${APIKEY[1]}${MISSAPIKEY[2]}${APIKEY[2]}${MISSAPIKEY[3]}${APIKEY[3]}`)
       .then(response => {
         setPost(response.data.items)
         console.log(posts)
@@ -66,15 +64,7 @@ export default function TableWithResults() {
     (hooks) => {
       hooks.visibleColumns.push((columns) => {
         return [
-          {
-            id: 'selection',
-            Header: ({ getToggleAllRowsSelectedProps }) => (
-              <Checkbox {...getToggleAllRowsSelectedProps()} />
-            ),
-            Cell: ({ row }) => (
-              <Checkbox {...row.getToggleRowSelectedProps()} />
-            )
-          },
+          
           ...columns,
 
           {
@@ -96,7 +86,9 @@ export default function TableWithResults() {
   /* ----------------------------------- */
 
   return (
-    <div>
+    <>
+      < Breadcrumb/>
+      <div>
       <input type='text' value={inputValue} onChange={e => setInputValue(e.target.value)} />
       <button type='button' onClick={() => setSearch(inputValue)} >Search</button>
 
@@ -110,7 +102,8 @@ export default function TableWithResults() {
             </tr>
           ))}
 
-        </thead>
+        </thead>y
+
         <tbody {...getTableBodyProps()}>
           {rows.map((row) => {
             prepareRow(row)
@@ -146,7 +139,7 @@ export default function TableWithResults() {
         </tfoot>
       </table>
 
-      <pre>
+{/*       <pre>
         <code>
           {JSON.stringify(
             {
@@ -156,8 +149,9 @@ export default function TableWithResults() {
             2
           )}
         </code>
-      </pre>
-    </div>
+      </pre> */}
+      </div>
+    </>
   )
 }
 

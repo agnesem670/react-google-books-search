@@ -1,12 +1,12 @@
 import { Form, redirect, useActionData } from "react-router-dom";
-import MainLayout from "../layouts/MainLayout"
+import ContactLayout from "../layouts/ContactLayout"
 
 export default function Contact() {
   const data = useActionData ()
   
   return (
     <>
-    <MainLayout />
+    <ContactLayout/>
     <div className='contact-container'>
       <h3>Contact Us</h3>
       <Form method="post" action="contact">
@@ -41,5 +41,5 @@ export const contactAction = async ({ request }) => {
     return {error: 'Message must be over 5 chars long'}
   }
 
-  return redirect('/')
+  return redirect('/react/')
 }

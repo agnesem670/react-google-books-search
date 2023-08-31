@@ -20,8 +20,8 @@ import ResultsLayout from './layouts/ResultsLayout'
 const router = createBrowserRouter(
 
   createRoutesFromElements(
-    <Route path="/" element={<RootLayout />}>
-      <Route path="/" element={<Home />} action={homeAction} />
+    <Route path="/react/" element={<RootLayout />}>
+      <Route path="/react/" element={<Home />} action={homeAction} />
       <Route path="results" element={<ResultsLayout />}>
         <Route index element={<TableWithResults />}/>
         <Route path=":id" element={<ResultDetails />} loader={resultDetailsLoader}/>

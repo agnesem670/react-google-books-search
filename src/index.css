@@ -159,7 +159,8 @@ body {
 .main-search,
 .about-container,
 .key-container,
-.miss-key {
+.miss-key,
+.contact-container {
   position: absolute;
   max-width: 15vw;
   max-height: 70vh;
@@ -175,13 +176,15 @@ body {
 }
 
 .main-search > form,
-.miss-key > form {
+.miss-key > form,
+.contact-container > form {
   display: flex;
   flex-direction: column;
 }
 
 .main-search > form > button,
-.miss-key > form > button {
+.miss-key > form > button,
+.contact-container > form > button {
   width: 150px;
   height: 40px;
   margin-top: 1vh;
@@ -189,12 +192,15 @@ body {
 }
 
 .main-search > form > label,
-.miss-key > form > label {
+.miss-key > form > label,
+.contact-container > form > label {
   position: relative;
 }
 
 .main-search > form > label > input,
-.miss-key > form > label > input {
+.miss-key > form > label > input,
+.contact-container > form > label > input,
+.contact-container > form > label > textarea {
   width: 15vw;
   padding: 10px;
   border: 1px solid var(--green);
@@ -207,7 +213,8 @@ body {
 }
 
 .main-search > form > label > span,
-.miss-key > form > label > span {
+.miss-key > form > label > span
+/* .contact-container > form > label > span */ {
   position: absolute;
   left: 0;
   padding: 10px;
@@ -221,6 +228,8 @@ body {
 .main-search > form > label > input:focus ~ span,
 .miss-key > form > label > input:valid ~ span,
 .miss-key > form > label > input:focus ~ span
+/* .contact-container > form > label > input:valid ~ span,
+.contact-container > form > label > input:focus ~ span */
 {
   transform: translateX(10px) translateY(-7px);
   transition: 0.5s;

@@ -5,28 +5,17 @@ import MainLayout from "../layouts/MainLayout";
 import MissKeyLayout from "../layouts/MissKeyLayout";
 
 export let SEARCH = ''
-export let MISSKEY = {1: 0,}
+export let MISSAPIKEY = {1: 0,}
+let ISAPIKEY = false
 
 export default function Home() {
   const [search, setSearch] = useState('')
   const [counter, setCounter] = useState(0)
-  const [isApikey, setisApikey] = useState(false)
   const [inptvalue, setInputvalue] = useState()
   const [misskey, setMisskey] = useState()
   const [wrongnumber, setWrongnumber] = useState()
 
   // ---------------------------------------------
-  useEffect(() => {
-    if (misskey === 3) {
-      setisApikey(true)
-      MISSKEY = {2: 4,
-        3: 9}
-        console.log(MISSKEY)
-    }
-  }, [misskey])
-
-  // ---------------------------------------------
-
   const errNumber = () => {
     return <>Wrong number, try one more time.</>
   }
@@ -36,6 +25,9 @@ export default function Home() {
       setWrongnumber(errNumber())
     } else {
       setMisskey(inptvalue)
+      ISAPIKEY = true
+      MISSAPIKEY = {2: 4,
+        3: 9}
     }
   }
 
@@ -45,9 +37,8 @@ export default function Home() {
       < MissKeyLayout />
       <div className='miss-key'>
         <h3>Complete API Key</h3>
-        {/* <p>This webpage works only with complete API Key. The source code is availabe on github, api key has to be completed by user.</p> */}
         <p><b>How many balloons do you see in the picture? Enter a number.</b></p>
-        <Form method="get" action="/">
+        <Form method="get" action="/react/">
           <label>
             <input
               type="number"
@@ -73,7 +64,7 @@ export default function Home() {
       <MainLayout />
       <div className='main-search'>
         <h3>What book you are looking for?</h3>
-        <Form method="post" action="/">
+        <Form method="post" action="/react/">
           <label>
             <input
               type="text"
@@ -82,7 +73,7 @@ export default function Home() {
               onChange={e => setSearch(e.target.value)}
               required>
             </input>
-            <span>...</span>
+            <span>Title / Author</span>
           </label>
           <button>Search</button>
         </Form>
@@ -107,8 +98,10 @@ export default function Home() {
     element.className = 'story'
   }, [counter])
 
+  // --------------------------------------------------------
+
   return (
-    <> {isApikey ? searchForm : missKeyForm} </>
+    <> {ISAPIKEY ? searchForm : missKeyForm} </>
   )
 }
 

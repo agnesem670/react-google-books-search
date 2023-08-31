@@ -6,7 +6,7 @@ export default function RootLayout() {
       <header>
         <nav>
           <h3>Search books with Google API</h3>
-          <NavLink to="/" >Home</NavLink>
+          <NavLink to="/react/" >Home</NavLink>
           <NavLink to="about">About</NavLink>
           <NavLink to="contact">Contact</NavLink>
         </nav>
